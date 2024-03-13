@@ -14,31 +14,45 @@ class Program
         // Parse the input and store it in the variable grade
         int grade = int.Parse(gradeInput);
 
+        int lastDigit = grade % 10;
+
         //create a new variable called 'letter' to store the letter grade
-        char letter;
+        string letter;
+        string sign = "";
 
         if (grade >= 90)
         {
-            letter = 'A';
+        letter = "A"; 
         }
         else if (grade >= 80)
         {
-            letter = 'B';
+            letter = "B";
         }
         else if (grade >= 70)
         {
-            letter = 'C';
+            letter = "C";
         }
         else if (grade >= 60)
         {
-            letter = 'D';
+            letter = "D";
         }
         else
         {
-            letter = 'F';
+            letter = "F";
         }
 
-        Console.WriteLine($"Your grade is: {letter}");
+        // Determine the sign based on the last digit
+
+        if (lastDigit >= 7)
+        {
+            sign = "+";
+        }
+        else if (lastDigit < 3)
+        {
+            sign = "-";
+        }
+
+        Console.WriteLine($"Your grade is: {letter}{sign}");
 
         if (grade >=70)
         {
