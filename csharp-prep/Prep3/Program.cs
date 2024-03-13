@@ -5,14 +5,19 @@ class Program
     static void Main(string[] args)
     {
         //Ask the user to input the magic number and their guess.
-        Console.Write("What is the magic number? ");
-        string magicNumberInput = Console.ReadLine();
+                //code below is commented out for when the user supplies the magic number.
+        //Console.Write("What is the magic number? ");
+        //string magicNumberInput = Console.ReadLine();
 
-        Console.Write("What is your guess? ");
+        //code to have the computer generate the magic number
+        Random randomGenerator = new Random();
+        int magicNumber = randomGenerator.Next(1, 101);
+
+        Console.Write("Welcome to our number guessing game!" + "\nPlease enter your guess? ");
         string guessInput = Console.ReadLine();
 
-        // Parse the inputs and store it in the variables magicNumber and guess.
-        int magicNumber = int.Parse(magicNumberInput);
+        // Parse the input and store it in the guess variable.
+        //int magicNumber = int.Parse(magicNumberInput);
         int guess = int.Parse(guessInput);
 
         // Determine if the user needs to guess higher or lower
