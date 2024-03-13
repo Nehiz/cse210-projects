@@ -8,8 +8,6 @@ class Program
         Console.WriteLine("What is your grade percentage? ");
         string gradeInput = Console.ReadLine();
 
-        // Declear a variable to store the parsed input
-        //int grade;
 
         // Parse the input and store it in the variable grade
         int grade = int.Parse(gradeInput);
@@ -59,7 +57,7 @@ class Program
         }
         else if (lastDigit < 3 && grade <= 99)
         {
-            if (letter != "F") // this ensures the F takes no - sign
+            if (letter != "F") // this will ensures the F takes no - sign
             sign = "-";
         }
 
