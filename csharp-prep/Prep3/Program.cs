@@ -4,18 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        /*Ask the user to input the magic number and their guess.
-        
-        Console.Write("What is the magic number? ");
-        string magicNumberInput = Console.ReadLine();
-        */
+        //Part 1 and 2 where the user is prompted to input the magic number.
+        //Console.Write("What is the magic number? ");
+        //string magicNumberInput = Console.ReadLine();
 
-        //code to have the computer generate the magic number
+        //Part where the computer generate a random number
         Random randomGenerator = new Random();
         int magicNumber = randomGenerator.Next(1, 101);
 
-        //Intialize the guess counter
-        int guessCount = 1;
+        int guessCount = 1; //Intialize the guess counter
 
         Console.Write("Welcome to our number guessing game!"
         + "\nA number between 1 to 100 has been chosen."
