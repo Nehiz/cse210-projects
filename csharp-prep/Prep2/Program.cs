@@ -12,7 +12,7 @@ class Program
         // Parse the input and store it in the variable grade
         int grade = int.Parse(gradeInput);
 
-        int lastDigit = grade % 10; // Get the last digit of the grade
+        int lastDigit = grade % 10; // Get the last digit of the grade and store it in the variable lastDigit
 
         //create a new variable called 'letter' to store the letter grade and sign.
         string letter;

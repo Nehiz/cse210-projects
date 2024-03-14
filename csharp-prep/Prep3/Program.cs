@@ -16,7 +16,7 @@ class Program
         Console.Write("Welcome to our number guessing game!" + "\nPlease enter your guess? ");
         string guessInput = Console.ReadLine();
 
-        // Parse the input and store it in the guess variable.
+        // Parse the input and store it in the guess.
         //int magicNumber = int.Parse(magicNumberInput);
         int guess = int.Parse(guessInput);
 
