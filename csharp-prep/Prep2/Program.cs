@@ -48,7 +48,7 @@ class Program
         }
 
         // Determine the sign based on the last digit
-        if (lastDigit >= 7 && grade == 100) //
+        if (lastDigit >= 7 && grade == 100) 
         {
             if (letter != "F") // this ensures the F takes no + sign
             {

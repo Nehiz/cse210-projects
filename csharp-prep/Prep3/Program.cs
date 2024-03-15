@@ -8,7 +8,7 @@ class Program
         //Console.Write("What is the magic number? ");
         //string magicNumberInput = Console.ReadLine();
 
-        //Part where the computer generate a random number
+        //For the part where the computer generate a random number
         Random randomGenerator = new Random();
         int magicNumber = randomGenerator.Next(1, 101);
 
@@ -16,14 +16,14 @@ class Program
 
         Console.Write("Welcome to our number guessing game!"
         + "\nA number between 1 to 100 has been chosen."
-        + "\nCan you guess the number? ");
+        + "\nEnter a number to guess: ");
         string guessInput = Console.ReadLine();
 
         
         //int magicNumber = int.Parse(magicNumberInput); //Parsed the magic number input entered by the user and saved in the variable magicNumber
         int guess = int.Parse(guessInput); // Parse the input and store it in the guess.
 
-        // Use an if statement to determine if the user need to guess higher or lower
+        // // An if statement to determine if the user need to guess higher or lower
         
         if (magicNumber > guess)
         {
@@ -33,12 +33,6 @@ class Program
         {
             Console.WriteLine("Lower");
         }
-        else
-        {
-            Console.WriteLine("You guessed it!");
-        }
-        
-
         // A loop that keeps looping until the user guess right
         while (magicNumber != guess)
         {
