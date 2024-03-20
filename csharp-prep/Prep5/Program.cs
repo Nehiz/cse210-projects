@@ -42,7 +42,7 @@ class Program
 
         static void DisplayResult(string name, int squared)
         {
-            Console.WriteLine($"{name}, the square of your number is {squared}");
+            Console.WriteLine($" Hi {name}, the square of your number is {squared}");
         }
 
     }
