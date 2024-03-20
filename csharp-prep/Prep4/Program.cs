@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Program
 {
@@ -7,7 +8,7 @@ class Program
     {
         List<int> numList = new List<int>();  // Create a new list to store the numbers
 
-        Console.Write("Enter a number (or 0 to quit): ");  // Prompt the user to enter a number
+        Console.WriteLine("Enter a number (or 0 to quit): ");  // Prompt the user to enter a number
         
         while (true) // Infinite loop until the user enters 0
         {
@@ -15,14 +16,13 @@ class Program
             
             int numbers = int.Parse(number);  // Parse the input and store it in the variable numbers
             
-            Console.Write("Enter another number: ");  // Prompt the user to enter another number
-       
             if (numbers == 0)  // Check if the user enters 0.
             {
                 break; // If yes, then exit the loop
             }
             
             numList.Add(numbers);  // Add the number to the list
+            Console.WriteLine($"Number: {numbers} added to list"); // Provide feedback to the user
         }
 
         int sum = numList.Sum(); //    Calculate the sum of the numbers
