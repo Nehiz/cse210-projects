@@ -16,7 +16,7 @@ class Program
 
         Console.Write("Welcome to our number guessing game!"
         + "\nA number between 1 to 100 has been chosen."
-        + "\nEnter a number to guess: ");
+        + "\nEnter a number: ");
         string guessInput = Console.ReadLine();
 
         
