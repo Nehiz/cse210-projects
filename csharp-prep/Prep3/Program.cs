@@ -14,9 +14,10 @@ class Program
 
         int guessCount = 1; //Intialize the guess counter
 
-        Console.Write("Welcome to our number guessing game!"
-        + "\nA number between 1 to 100 has been chosen."
-        + "\nEnter a number: ");
+        Console.WriteLine("Welcome to our number guessing game!");
+        Console.WriteLine("A number between 1 to 100 has been chosen.");
+        
+        Console.Write("Enter a number: ");
         string guessInput = Console.ReadLine();
 
         
