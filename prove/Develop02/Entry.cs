@@ -17,4 +17,5 @@ public class Entry
     {
         return $"Date: {Date}\nPrompt: {Prompt}\nResponse: {Response}\n";
     }
+
 }
