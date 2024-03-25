@@ -12,11 +12,11 @@ An application of abstraction in the context of the journal program assignment i
 **Demonstration of Abstraction in my Journal Program**
 A code demonstarting abstraction in the journal program I wrote is as follows: 
 
+```csharp
 public class Journal
 {
     private List<Entry>entries;
-            (Constructor, methods, and properties have been removed for simplicity) 
-    
+            //Constructor, methods, and properties have been removed for simplicity
     public void DisplayJournal()
     {
         foreach (Entry entry in entries)
@@ -24,9 +24,7 @@ public class Journal
             entry.Display();
         }
     }
-
 }
-
 public class Entry
 {
     public string Prompt {get; set; }
@@ -39,6 +37,7 @@ public class Entry
         Console.WriteLine($"Prompt: {Prompt}");
         Console.WriteLine($"Response: {Response}\n");
     }
-}
+} 
+
 **Description of the Abstraction Concept**
 in the above example, the 'DisplayJournal' method in the 'Journal' class abstracts away the details of how individual entries are displayed. it simply iterates over the list of entries and calls the 'DIsplay' method on each 'Entry' object. The 'Entry' class contains the details of displaying an individual entry, also abstracting them away from the journal class. this helps to improve the organization of the code and makes it easier to read.
