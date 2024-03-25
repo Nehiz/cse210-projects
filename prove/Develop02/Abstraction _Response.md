@@ -10,7 +10,7 @@ When used correctly, one benefit of abstraction is that it makes the code to be 
 An application of abstraction in the context of the journal program assignment is the sepation of concerns between the 'Journal' class and the 'Entry' class. We saw that while the 'Entry' class represented individual journal entries, the 'Journal' class house the functionality related to managing a journal. Thus, developers are able to work with entries without the need to fully understand the internal implementation of the journal management. 
 
 **Demonstration of Abstraction in my Journal Program**
-A code demonstarting abstraction in the journal program I wrote is as follows: 
+In the code below, the 'DisplayJournal' method in the 'Journal' class abstracts away the details of how individual entries are displayed. it simply iterates over the list of entries and calls the 'DIsplay' method on each 'Entry' object. The 'Entry' class contains the details of displaying an individual entry, also abstracting them away from the journal class. this helps to improve the organization of the code and makes it easier to read.
 
 ```csharp
 public class Journal
@@ -38,6 +38,3 @@ public class Entry
         Console.WriteLine($"Response: {Response}\n");
     }
 } 
-
-**Description of the Abstraction Concept**
-in the above example, the 'DisplayJournal' method in the 'Journal' class abstracts away the details of how individual entries are displayed. it simply iterates over the list of entries and calls the 'DIsplay' method on each 'Entry' object. The 'Entry' class contains the details of displaying an individual entry, also abstracting them away from the journal class. this helps to improve the organization of the code and makes it easier to read.
