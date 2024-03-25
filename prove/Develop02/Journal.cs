@@ -14,12 +14,14 @@ public class Journal
     public void WriteNewEntry()
     {
         string prompt = GenerateRandomPrompt();
+        
         Console.WriteLine($"Prompt: {prompt}");
-
         Console.Write("Response: ");
         string response = Console.ReadLine();
-
-        Entry entry = new Entry(prompt, response);
+        Console.Write("Additional Information: "); 
+        string additionalInfo = Console.ReadLine(); // Prompt for additional information
+        string date = DateTime.Now.ToString("MM/dd/yyyy"); // Get the current date
+        Entry entry = new Entry(prompt, response, additionalInfo); // Create a new entry
         entries.Add(entry);
 
         Console.WriteLine("Entry added to Journal.");
@@ -37,9 +39,10 @@ public class Journal
             Console.WriteLine("Entries");
             foreach (var entry in entries)
             {
-                Console.WriteLine($"Date: {entry.Date}, Prompt: {entry.Prompt}, Response: {entry.Response}");
+                Console.WriteLine($"Date: {entry.Date}");
                 Console.WriteLine($"Prompt: {entry.Prompt}");
                 Console.WriteLine($"Response: {entry.Response}");
+                Console.WriteLine($"Additional Info: {entry.AdditionalInfo}");
             }
 
         }
@@ -82,7 +85,7 @@ public class Journal
                     string[] parts = line.Split('|');
                     if (parts.Length == 3)
                     {
-                        Entry entry = new Entry(parts[1], parts[2]);
+                        Entry entry = new Entry(parts[1], parts[2], parts[3]);
                         entry.Date = DateTime.Parse(parts[0]);
                         entries.Add(entry); 
                     }
