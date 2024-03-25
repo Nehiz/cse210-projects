@@ -5,6 +5,7 @@ Abstraction which is a key concept in programming involves simplifying complex c
 
 **A Benefit of Abstraction**
 When used correctly, one benefit of abstraction is that it makes the code to be easier to understand, maintain and extend over time.
+
 **Application of Abstraction**
 An application of abstraction in the context of the journal program assignment is the sepation of concerns between the 'Journal' class and the 'Entry' class. We saw that while the 'Entry' class represented individual journal entries, the 'Journal' class house the functionality related to managing a journal. Thus, developers are able to work with entries without the need to fully understand the internal implementation of the journal management. 
 
