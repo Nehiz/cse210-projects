@@ -6,9 +6,12 @@ public class ScriptureManager
 {
     private List<string> scripture;
 
+    private int hiddenLinesCount;
+
     public ScriptureManager()
     {
         scripture = new List<string>();
+        hiddenLinesCount = 0;
     }
 
     public bool LoadScriptureFromFile(string filePath)
@@ -30,17 +33,41 @@ public class ScriptureManager
         }
     }
 
-    public void DisplayScripture(int index)
+    public void DisplayScripture()
     {
-        if (index >= 0 && index < scripture.Count)
+        Console.Clear();
+        foreach (string line in scripture)
         {
-            Console.WriteLine(scripture[index]);
-        }
-        else
-        {
-            Console.WriteLine("Invalid index.");
+            Console.WriteLine(line);
         }
     }
+
+    public void HideLines(int count)
+    {
+        if (count <= 0 || count > scripture.Count)
+        {
+            Console.WriteLine("Invalid number of Lines to hide.");
+            return;
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            int index = hiddenLinesCount + i;
+            if (index < scripture.Count)
+            {
+                string hiddenLine = new string('*', scripture[index].Length);
+                scripture[index] = hiddenLine;
+            }
+        }
+
+        hiddenLinesCount += count;
+    }
+
+    public bool AllLinesHidden()
+    {
+        return hiddenLinesCount >= scripture.Count;
+    }
+    
 
     public Scripture GetScripture(int index)
     {
@@ -50,9 +77,18 @@ public class ScriptureManager
             string scriptureText = scripture[index];
             //extract reference and text from the scripture, example "John 3:16"
             string[] parts = scriptureText.Split('|');
-            string reference = parts[0];
-            string text = parts[1];
-            return new Scripture(reference, text);
+            
+            if (parts.Length >= 2)
+            {
+                string reference = parts[0];
+                string text = parts[1];
+                return new Scripture(reference, text);
+            }
+            else
+            {
+                Console.WriteLine("Invalid scripture format:" + scriptureText);
+                return null;
+            }
         }
         else
         {
@@ -73,7 +109,8 @@ public class ScriptureManager
                 int wordIndex = rand.Next(words.Length);
                 words[wordIndex] = new string('*', words[wordIndex].Length);
             }
-            string newScripture = string.Join(" ", words);
+            
+            scripture[index] = string.Join(" ", words); // Assign the modified text back to the scripture list
         }
     }
 
